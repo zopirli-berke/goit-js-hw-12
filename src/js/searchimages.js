@@ -21,7 +21,7 @@ const lightbox = new SimpleLightbox('.gallery a');
 // Sayfa yüklendiğinde load more butonunu gizle
 hideLoadMoreBtn();
 
-// --- OLAY DİNLEYİCİLERİ ---
+// -- OLAY DİNLEYİCİLERİ --
 form.addEventListener('submit', handleFormSubmit);
 loadMoreBtn.addEventListener('click', handleLoadMore);
 
