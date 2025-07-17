@@ -21,6 +21,15 @@ const lightbox = new SimpleLightbox('.gallery a');
 // Sayfa yüklendiğinde load more butonunu gizle
 hideLoadMoreBtn();
 
+// Loader yardımcı fonksiyonlar
+function showLoadingText() {
+  loader.classList.remove('hidden');
+}
+
+function hideLoadingText() {
+  loader.classList.add('hidden');
+}
+
 // -- OLAY DİNLEYİCİLERİ --
 form.addEventListener('submit', handleFormSubmit);
 loadMoreBtn.addEventListener('click', handleLoadMore);
@@ -73,6 +82,7 @@ async function handleFormSubmit(event) {
 async function handleLoadMore() {
   currentPage += 1;
   showLoader();
+  showLoadingText();
   hideLoadMoreBtn();
 
   try {
@@ -85,6 +95,7 @@ async function handleLoadMore() {
     console.error(error);
   } finally {
     hideLoader();
+    hideLoadingText();
   }
 }
 
